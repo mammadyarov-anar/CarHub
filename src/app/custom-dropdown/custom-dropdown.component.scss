@@ -1,0 +1,33 @@
+.custom-dropdown {
+  position: relative;
+  cursor: pointer;
+  width: 120px;
+  user-select: none;
+  margin-right: 10px;
+  @apply drop-shadow-md;
+}
+
+.selected-option {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dropdown-list li:hover {
+  background-color: blue;
+  color: white;
+}
+
+.dropdown-list {
+  width: 120px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: block;
+  @apply max-h-64 overflow-scroll;
+}

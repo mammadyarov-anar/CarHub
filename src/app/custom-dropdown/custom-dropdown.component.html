@@ -1,0 +1,12 @@
+<div class="custom-dropdown" [class.open]="isOpen" (click)="toggleDropdown()">
+  <div class="selected-option">{{ selectedOption }}</div>
+  <ul *ngIf="isOpen" class="dropdown-list">
+    <li
+      *ngFor="let option of options"
+      (click)="selectOption(option)"
+      class="py-3 pl-5"
+    >
+      {{ option }}
+    </li>
+  </ul>
+</div>

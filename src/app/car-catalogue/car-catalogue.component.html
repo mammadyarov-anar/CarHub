@@ -1,0 +1,77 @@
+<div class="mx-16">
+  <!-- head -->
+  <p class="text-[35px] font-medium">Car Catalogue</p>
+  <p>Explore the care you might like</p>
+
+  <!-- INPUTS -->
+  <div class="h-[100px] flex items-center justify-between">
+    <div
+      class="bg-[rgba(59,60,152,.03)] pl-2 w-[740px] h-[48px] rounded-full flex items-center"
+    >
+      <div (click)="toggleDropdown()" class="relative flex items-center">
+        <img class="w-[25px] h-[25px]" src="../../assets/car-logo.svg" alt="" />
+        <input
+          placeholder="Select an option"
+          class="bg-[rgba(218,218,224,0.03)] w-[330px] border-none outline-none"
+          type="text"
+          readonly
+          [value]="selectedCarOption"
+        />
+        <ul
+          *ngIf="isCarOptionsOpen"
+          class="absolute top-10 left-0 max-h-64 overflow-scroll w-[320px] shadow-lg text-black bg-white"
+        >
+          <li
+            class="text-black hover:bg-blue-600 py-3 pl-5 text-[18px] hover:text-white"
+            *ngFor="let car of carOptions"
+            (click)="selectOption(car)"
+          >
+            {{ car }}
+          </li>
+        </ul>
+      </div>
+      <img
+        class="w-[22px] h-[22px]"
+        src="../../assets/model-icon.webp"
+        alt=""
+      />
+      <input
+        placeholder="Tiguan"
+        class="bg-[rgba(218,218,224,0.03)] w-[315px] border-none outline-none"
+        [(ngModel)]="carModel"
+      />
+      <button (click)="search()">
+        <img src="../../assets/searche icon.svg" alt="" />
+      </button>
+    </div>
+
+    <div class="flex items-center">
+      <!-- SELECT MENU -->
+      <app-custom-dropdown
+        [isOpen]="false"
+        [selectedOption]="'Year'"
+        [options]="[
+          'Year',
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ]"
+        (optionEmitter)="getYear($event)"
+      ></app-custom-dropdown>
+
+      <!-- SELECT MENU 2 -->
+      <app-custom-dropdown
+        [isOpen]="false"
+        [selectedOption]="'Fuel'"
+        [options]="['Fuel', 'Gas', 'Electricity']"
+        (optionEmitter)="getFuel($event)"
+      ></app-custom-dropdown>
+    </div>
+  </div>
+</div>
