@@ -1,7 +1,8 @@
-<div class="relative">
-  <app-head></app-head>
-  <app-car-catalogue></app-car-catalogue>
-  <app-car-cards> </app-car-cards>
-  <app-footer></app-footer>
-  <app-search-dropdown></app-search-dropdown>
-</div>
+<app-head></app-head>
+<app-car-catalogue></app-car-catalogue>
+<app-car-cards> </app-car-cards>
+<app-footer></app-footer>
+<app-car-modal
+  *ngIf="isCarModalOpen$ | async"
+  class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+></app-car-modal>

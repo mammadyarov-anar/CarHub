@@ -1,0 +1,78 @@
+<div
+  *ngIf="selectedCar$ | async as car"
+  class="relative p-4 w-[500px] bg-white h-[550px] shadow-md overflow-y-scroll rounded-l-lg"
+>
+  <div
+    (click)="closeModal()"
+    class="absolute top-2 right-2 bg-slate-200 w-[30px] h-[30px] rounded-full"
+  >
+    <img
+      class="ml-[5px] mt-[5px] w-[20px] h-[20px]"
+      src="../../assets/close icon.svg"
+      alt=""
+    />
+  </div>
+  <img
+    class="car-bg-image px-14 py-2 rounded-3xl"
+    src="../../assets/infiniti.webp"
+    alt=""
+  />
+  <div class="grid grid-cols-3 gap-2 mt-2">
+    <img src="../../assets/infiniti.webp" alt="" />
+    <img src="../../assets/infiniti.webp" alt="" />
+    <img src="../../assets/infiniti.webp" alt="" />
+  </div>
+  <h2>{{ car.make }}</h2>
+  <div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">City Mpg</p>
+      <p class="text-black font-semibold">{{ car.combination_mpg }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Class</p>
+      <p class="text-black font-semibold">{{ car.class }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Combination Mpg</p>
+      <p class="text-black font-semibold">{{ car.combination_mpg }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Cylinders</p>
+      <p class="text-black font-semibold">{{ car.cylinders }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Displacement</p>
+      <p class="text-black font-semibold">{{ car.displacement }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Drive</p>
+      <p class="text-black font-semibold">{{ car.drive | uppercase }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Fuel Type</p>
+      <p class="text-black font-semibold">{{ car.fuel_type | uppercase }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Highway Mpg</p>
+      <p class="text-black font-semibold">{{ car.highway_mpg }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Make</p>
+      <p class="text-black font-semibold">{{ car.make | uppercase }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Model</p>
+      <p class="text-black font-semibold">{{ car.model | uppercase }}</p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Transmission</p>
+      <p class="text-black font-semibold">
+        {{ car.transmission === "a" ? "Automatic" : car.transmission }}
+      </p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-gray-400">Year</p>
+      <p class="text-black font-semibold">{{ car.year }}</p>
+    </div>
+  </div>
+</div>

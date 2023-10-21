@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarService } from '../services/car.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { CarService } from '../services/car.service';
   templateUrl: './car-catalogue.component.html',
   styleUrls: ['./car-catalogue.component.scss'],
 })
-export class CarCatalogueComponent {
+export class CarCatalogueComponent implements OnInit {
   isCarOptionsOpen = false;
   isOpen = false;
   selectedCarOption = '';
@@ -48,10 +48,13 @@ export class CarCatalogueComponent {
     'Volvo',
   ];
   carModel = '';
-  carYear = null;
+  carYear = 2023;
   carFuel = '';
 
   constructor(private carService: CarService) {}
+  ngOnInit(): void {
+    this.search();
+  }
 
   toggleDropdown() {
     this.isCarOptionsOpen = !this.isCarOptionsOpen;
@@ -62,13 +65,15 @@ export class CarCatalogueComponent {
   }
 
   search(): void {
-    console.log(
-      this.carModel,
-      this.carFuel,
-      this.carYear,
-      this.selectedCarOption
-    );
-    this.carService.getCars(null).subscribe((res) => console.log(res));
+    const params = {
+      model: this.carModel,
+      make: this.selectedCarOption,
+      year: this.carYear,
+      fuel_type: this.carFuel,
+    };
+    this.carService.getCars(params).subscribe((res) => {
+      this.carService.cars$.next(res);
+    });
   }
 
   getYear(year: any) {

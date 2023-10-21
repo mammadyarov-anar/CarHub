@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchDropdownComponent } from './search-dropdown.component';
+import { CarModalComponent } from './car-modal.component';
 
-describe('SearchDropdownComponent', () => {
-  let component: SearchDropdownComponent;
-  let fixture: ComponentFixture<SearchDropdownComponent>;
+describe('CarModalComponent', () => {
+  let component: CarModalComponent;
+  let fixture: ComponentFixture<CarModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchDropdownComponent ]
+      declarations: [ CarModalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SearchDropdownComponent);
+    fixture = TestBed.createComponent(CarModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

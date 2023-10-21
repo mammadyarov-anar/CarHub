@@ -10,8 +10,8 @@ import { CustomDropdownComponent } from './custom-dropdown/custom-dropdown.compo
 import { CarCardsComponent } from './car-cards/car-cards.component';
 import { CardComponent } from './card/card.component';
 import { FooterComponent } from './footer/footer.component';
-import { SearchDropdownComponent } from './search-dropdown/search-dropdown.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarModalComponent } from './car-modal/car-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CarCardsComponent,
     CardComponent,
     FooterComponent,
-    SearchDropdownComponent,
+    CarModalComponent,
   ],
   imports: [
     BrowserModule,
